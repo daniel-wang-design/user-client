@@ -1,1 +1,3 @@
-export default ["Home", "Gallery", "Store", "Favorites", "Saved"];
+const values: string[] = ["Home", "Gallery", "Store", "Favorites", "Saved"];
+
+export default values;

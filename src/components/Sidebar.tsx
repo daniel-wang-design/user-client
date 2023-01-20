@@ -10,12 +10,14 @@ import { RiSettings4Fill } from "react-icons/ri";
 import { FaRegBell } from "react-icons/fa";
 import classNames from "classnames";
 
-import styles from "./Sidebar.module.css";
+import styles from "./Sidebar.styling";
 
-const Sidebar = ({ navigationData }) => {
+const Sidebar: React.FC<{ navigationData: string[] }> = ({
+  navigationData,
+}) => {
   const [currentRoute, setCurrentRoute] = useState("Home");
 
-  const renderIcon = useCallback((element) => {
+  const renderIcon = useCallback((element: string) => {
     switch (element) {
       case "Home":
         return <BsHouseFill />;
@@ -36,7 +38,7 @@ const Sidebar = ({ navigationData }) => {
         <IoLogoEdge />
       </span>
       <ul className={styles.navListItems}>
-        {navigationData.map((element, index) => (
+        {navigationData.map((element: string, index: number) => (
           <li
             key={index}
             className={classNames([
